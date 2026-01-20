@@ -1,0 +1,212 @@
+COMPLETE FILE LIST - TRAVEL APP STRUCTURE
+==========================================
+
+Total Screens: 160
+Total Features: 19
+Total Files: ~500+
+
+CORE FILES
+==========
+lib/main.dart
+lib/app.dart
+
+CONSTANTS (4 files)
+===================
+lib/core/constants/app_colors.dart
+lib/core/constants/app_strings.dart
+lib/core/constants/app_text_styles.dart
+lib/core/constants/app_routes.dart
+
+THEME (3 files)
+===============
+lib/core/theme/light_theme.dart
+lib/core/theme/dark_theme.dart
+lib/core/theme/theme_bloc.dart
+
+UTILS (4 files)
+===============
+lib/core/utils/date_formatter.dart
+lib/core/utils/currency_formatter.dart
+lib/core/utils/validators.dart
+lib/core/utils/helpers.dart
+
+CORE WIDGETS (5 files)
+======================
+lib/core/widgets/custom_button.dart
+lib/core/widgets/custom_text_field.dart
+lib/core/widgets/loading_indicator.dart
+lib/core/widgets/error_widget.dart
+lib/core/widgets/empty_state.dart
+
+EXTENSIONS (3 files)
+====================
+lib/core/extensions/string_extensions.dart
+lib/core/extensions/date_extensions.dart
+lib/core/extensions/context_extensions.dart
+
+DATA MODELS (4 files)
+=====================
+lib/data/models/user_model.dart
+lib/data/models/booking_model.dart
+lib/data/models/payment_model.dart
+lib/data/models/notification_model.dart
+
+MOCK DATA (8 files)
+===================
+lib/data/mock/mock_users.dart
+lib/data/mock/mock_flights.dart
+lib/data/mock/mock_hotels.dart
+lib/data/mock/mock_cars.dart
+lib/data/mock/mock_buses.dart
+lib/data/mock/mock_tours.dart
+lib/data/mock/mock_esims.dart
+lib/data/mock/mock_taxis.dart
+
+CONFIG (5 files)
+================
+lib/config/routes/app_router.dart
+lib/config/routes/customer_routes.dart
+lib/config/routes/partner_routes.dart
+lib/config/routes/admin_routes.dart
+lib/config/app_config.dart
+
+SERVICES (4 files)
+==================
+lib/services/navigation_service.dart
+lib/services/storage_service.dart
+lib/services/logger_service.dart
+lib/services/mock_data_service.dart
+
+GLOBAL BLOCS (9 files)
+======================
+lib/blocs/global/theme_bloc/theme_bloc.dart
+lib/blocs/global/theme_bloc/theme_event.dart
+lib/blocs/global/theme_bloc/theme_state.dart
+lib/blocs/global/language_bloc/language_bloc.dart
+lib/blocs/global/language_bloc/language_event.dart
+lib/blocs/global/language_bloc/language_state.dart
+lib/blocs/global/connectivity_bloc/connectivity_bloc.dart
+lib/blocs/global/connectivity_bloc/connectivity_event.dart
+lib/blocs/global/connectivity_bloc/connectivity_state.dart
+
+FEATURE 1: AUTH - 8 Screens (Pages 1-10)
+=========================================
+lib/features/1_auth/presentation/screens/splash_screen.dart
+lib/features/1_auth/presentation/screens/onboarding_page.dart
+lib/features/1_auth/presentation/screens/language_picker_screen.dart
+lib/features/1_auth/presentation/screens/currency_picker_screen.dart
+lib/features/1_auth/presentation/screens/login_screen.dart
+lib/features/1_auth/presentation/screens/otp_verification_screen.dart
+lib/features/1_auth/presentation/screens/register_screen.dart
+lib/features/1_auth/presentation/screens/permissions_screen.dart
+
++ 5 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 2: HOME - 10 Screens (Pages 11-20)
+===========================================
+lib/features/2_home/presentation/screens/main_home_screen.dart
+lib/features/2_home/presentation/screens/global_search_screen.dart
+lib/features/2_home/presentation/screens/offers_screen.dart
+lib/features/2_home/presentation/screens/favorites_screen.dart
+lib/features/2_home/presentation/screens/notifications_inbox_screen.dart
+lib/features/2_home/presentation/screens/notification_detail_screen.dart
+lib/features/2_home/presentation/screens/profile_screen.dart
+lib/features/2_home/presentation/screens/settings_screen.dart
+lib/features/2_home/presentation/screens/wallet_screen.dart
+lib/features/2_home/presentation/screens/booking_history_screen.dart
+
++ 5 widgets, 6 bloc files, 3 models, 2 repositories, 1 entity
+
+FEATURE 3: FLIGHTS - 12 Screens (Pages 21-32)
+==============================================
+lib/features/3_flights/presentation/screens/flight_search_screen.dart
+lib/features/3_flights/presentation/screens/flight_results_screen.dart
+lib/features/3_flights/presentation/screens/flight_filters_screen.dart
+lib/features/3_flights/presentation/screens/flight_compare_screen.dart
+lib/features/3_flights/presentation/screens/flight_details_screen.dart
+lib/features/3_flights/presentation/screens/passenger_details_screen.dart
+lib/features/3_flights/presentation/screens/flight_addons_screen.dart
+lib/features/3_flights/presentation/screens/flight_review_screen.dart
+lib/features/3_flights/presentation/screens/flight_payment_screen.dart
+lib/features/3_flights/presentation/screens/flight_confirmation_screen.dart
+lib/features/3_flights/presentation/screens/manage_flight_booking_screen.dart
+lib/features/3_flights/presentation/screens/flight_status_tracker_screen.dart
+
++ 6 widgets, 6 bloc files, 4 models, 1 repository, 2 entities
+
+FEATURE 4: HOTELS - 12 Screens (Pages 33-44)
+=============================================
++ 12 screens, 6 widgets, 6 bloc files, 4 models, 1 repository, 2 entities
+
+FEATURE 5: CARS - 11 Screens (Pages 45-55)
+===========================================
++ 11 screens, 5 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 6: BUSES - 8 Screens (Pages 56-63)
+===========================================
++ 8 screens, 4 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 7: TOURS - 9 Screens (Pages 64-72)
+===========================================
++ 9 screens, 4 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 8: HOME CHECK-IN - 6 Screens (Pages 73-78)
+===================================================
++ 6 screens, 4 widgets, 6 bloc files, 2 models, 1 repository, 1 entity
+
+FEATURE 9: E-SIM - 6 Screens (Pages 79-84)
+===========================================
++ 6 screens, 4 widgets, 3 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 10: AIRPORT TAXI - 8 Screens (Pages 85-92)
+===================================================
++ 8 screens, 5 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 11: SUPPORT - 8 Screens (Pages 93-100)
+===============================================
++ 8 screens, 5 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 12: PAYMENTS - 10 Screens (Pages 101-110)
+==================================================
++ 10 screens, 4 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 13: PARTNER AUTH - 1 Screen (Page 111)
+===============================================
++ 1 screen, 1 widget, 3 bloc files, 1 model, 1 repository, 1 entity
+
+FEATURE 14: PARTNER HOTEL - 9 Screens (Pages 112-120)
+======================================================
++ 9 screens, 5 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 15: PARTNER CAR - 9 Screens (Pages 121-129)
+====================================================
++ 9 screens, 4 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 16: PARTNER TOUR - 7 Screens (Pages 130-136)
+=====================================================
++ 7 screens, 4 widgets, 6 bloc files, 3 models, 1 repository, 1 entity
+
+FEATURE 17: PARTNER TAXI - 4 Screens (Pages 137-140)
+=====================================================
++ 4 screens, 4 widgets, 6 bloc files, 2 models, 1 repository, 1 entity
+
+FEATURE 18: ADMIN AUTH - 1 Screen (Page 141)
+=============================================
++ 1 screen, 1 widget, 3 bloc files, 1 model, 1 repository, 1 entity
+
+FEATURE 19: ADMIN - 19 Screens (Pages 142-160)
+===============================================
++ 19 screens, 6 widgets, 15 bloc files, 5 models, 1 repository, 1 entity
+
+==========================================
+SUMMARY
+==========================================
+Total Screens: 160
+Total Widgets: ~90
+Total BLoC Files: ~120
+Total Models: ~60
+Total Repositories: ~30
+Total Entities: ~20
+Total Files: ~500+
+
+All files are empty and ready for implementation!

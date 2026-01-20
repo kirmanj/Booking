@@ -1,0 +1,182 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'flights_event.dart';
+import 'flights_state.dart';
+
+class FlightsBloc extends Bloc<FlightsEvent, FlightsState> {
+  FlightsBloc() : super(const FlightsInitial()) {
+    on<LoadFlights>(_onLoadFlights);
+    on<SearchFlights>(_onSearchFlights);
+    on<FilterFlights>(_onFilterFlights);
+    on<SelectFlight>(_onSelectFlight);
+  }
+
+  Future<void> _onLoadFlights(
+    LoadFlights event,
+    Emitter<FlightsState> emit,
+  ) async {
+    emit(const FlightsLoading());
+
+    try {
+      // Simulate API call
+      await Future.delayed(const Duration(seconds: 1));
+
+      // Mock data
+      final flights = _getMockFlights();
+
+      emit(FlightsLoaded(flights: flights));
+    } catch (e) {
+      emit(FlightsError('Failed to load flights: ${e.toString()}'));
+    }
+  }
+
+  Future<void> _onSearchFlights(
+    SearchFlights event,
+    Emitter<FlightsState> emit,
+  ) async {
+    emit(const FlightsLoading());
+
+    try {
+      // Simulate API call with search parameters
+      await Future.delayed(const Duration(milliseconds: 800));
+
+      // Filter mock data based on search
+      final flights = _getMockFlights()
+          .where((flight) =>
+              flight.origin
+                  .toLowerCase()
+                  .contains(event.origin.toLowerCase()) &&
+              flight.destination
+                  .toLowerCase()
+                  .contains(event.destination.toLowerCase()))
+          .toList();
+
+      emit(FlightsLoaded(
+        flights: flights,
+        searchQuery: '${event.origin} → ${event.destination}',
+      ));
+    } catch (e) {
+      emit(FlightsError('Search failed: ${e.toString()}'));
+    }
+  }
+
+  Future<void> _onFilterFlights(
+    FilterFlights event,
+    Emitter<FlightsState> emit,
+  ) async {
+    if (state is! FlightsLoaded) return;
+
+    final currentState = state as FlightsLoaded;
+
+    var flights = List<FlightModel>.from(currentState.flights);
+
+    // Apply filters
+    if (event.maxPrice != null) {
+      flights = flights.where((f) => f.price <= event.maxPrice!).toList();
+    }
+
+    if (event.maxStops != null) {
+      flights = flights.where((f) => f.stops <= event.maxStops!).toList();
+    }
+
+    if (event.airline != null) {
+      flights = flights
+          .where((f) =>
+              f.airline.toLowerCase().contains(event.airline!.toLowerCase()))
+          .toList();
+    }
+
+    emit(FlightsLoaded(
+      flights: flights,
+      searchQuery: currentState.searchQuery,
+    ));
+  }
+
+  Future<void> _onSelectFlight(
+    SelectFlight event,
+    Emitter<FlightsState> emit,
+  ) async {
+    if (state is! FlightsLoaded) return;
+
+    final currentState = state as FlightsLoaded;
+    final flight =
+        currentState.flights.firstWhere((f) => f.id == event.flightId);
+
+    emit(FlightSelected(flight));
+  }
+
+  // Mock data for demonstration
+  List<FlightModel> _getMockFlights() {
+    return [
+      FlightModel(
+        id: '1',
+        airline: 'Emirates',
+        airlineLogoUrl:
+            "data:image/png;base64,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",
+        airlineCode: 'EM',
+        origin: 'New York (JFK)',
+        destination: 'Dubai (DXB)',
+        departureTime: DateTime.now().add(const Duration(days: 5, hours: 10)),
+        arrivalTime: DateTime.now().add(const Duration(days: 6, hours: 2)),
+        price: 599.99,
+        stops: 0,
+        flightNumber: 'EK201',
+      ),
+      FlightModel(
+        id: '2',
+        airline: 'Qatar Airways',
+        airlineCode: 'QR',
+        airlineLogoUrl:
+            "data:image/png;base64,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",
+        origin: 'New York (JFK)',
+        destination: 'Dubai (DXB)',
+        departureTime: DateTime.now().add(const Duration(days: 5, hours: 20)),
+        arrivalTime: DateTime.now().add(const Duration(days: 6, hours: 14)),
+        price: 579.99,
+        stops: 1,
+        flightNumber: 'QR701',
+      ),
+      FlightModel(
+        id: '3',
+        airline: 'Emirates',
+        airlineLogoUrl:
+            "data:image/png;base64,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",
+        airlineCode: 'EM',
+        origin: 'New York (JFK)',
+        destination: 'Dubai (DXB)',
+        departureTime: DateTime.now().add(const Duration(days: 5, hours: 15)),
+        arrivalTime: DateTime.now().add(const Duration(days: 6, hours: 9)),
+        price: 649.99,
+        stops: 1,
+        flightNumber: 'EK203',
+      ),
+      FlightModel(
+        id: '4',
+        airline: 'Etihad',
+        airlineCode: 'ET',
+        origin: 'New York (JFK)',
+        airlineLogoUrl:
+            "data:image/png;base64,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",
+        destination: 'Dubai (DXB)',
+        departureTime: DateTime.now().add(const Duration(days: 6, hours: 8)),
+        arrivalTime: DateTime.now().add(const Duration(days: 7, hours: 1)),
+        price: 699.99,
+        stops: 0,
+        flightNumber: 'EY101',
+      ),
+      FlightModel(
+        id: '5',
+        airline: 'Turkish Airlines',
+        airlineCode: 'TK',
+        origin: 'New York (JFK)',
+        airlineLogoUrl:
+            "data:image/png;base64,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",
+        destination: 'Dubai (DXB)',
+        departureTime: DateTime.now().add(const Duration(days: 6, hours: 18)),
+        arrivalTime: DateTime.now().add(const Duration(days: 7, hours: 15)),
+        price: 529.99,
+        stops: 1,
+        flightNumber: 'TK8',
+      ),
+    ];
+  }
+}

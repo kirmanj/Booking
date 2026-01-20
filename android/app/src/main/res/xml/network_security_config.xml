@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext (HTTP) traffic for all domains -->
+    <!-- This is required for Image.network to work with HTTP URLs -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Alternative: You can specify specific domains if you want more security -->
+    <!--
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">example.com</domain>
+        <domain includeSubdomains="true">yourdomain.com</domain>
+    </domain-config>
+    -->
+</network-security-config>
