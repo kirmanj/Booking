@@ -271,7 +271,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       longitude: 43.9633,
       emoji: '✈️',
       imageUrl:
-          'https://upload.wikimedia.org/wikipedia/en/thumb/8/83/Erbil_Airport_logo.png/250px-Erbil_Airport_logo.png',
+          'https://images.unsplash.com/photo-1500395235658-f87dff62cbf3?auto=format&fit=crop&w=900&q=70',
     ),
     const Airport(
       id: '2',
@@ -283,7 +283,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       longitude: 44.2346,
       emoji: '✈️',
       imageUrl:
-          'https://cms2.dev.unisco.com//api/media/file/basra-intl-airport.webp',
+          'https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=900&q=70',
     ),
     const Airport(
       id: '3',
@@ -295,7 +295,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       longitude: 45.3147,
       emoji: '✈️',
       imageUrl:
-          'https://play-lh.googleusercontent.com/HZjnM2LRap-901Uj-A-pqmRexzUONcXSy1y2Qk2w0UHv8Jx6usZzDEN_35Y8XSARpgo',
+          'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=70',
     ),
     const Airport(
       id: '4',
@@ -307,7 +307,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       longitude: 47.6621,
       emoji: '✈️',
       imageUrl:
-          'https://media.licdn.com/dms/image/v2/C4D0BAQHXlWAVlIcO-A/company-logo_200_200/company-logo_200_200/0/1630580423000/basra_international_airport_logo?e=2147483647&v=beta&t=afR5LQbXiLfrx-y0m6r18we1Vp9f_suAbPFBz95USJ0',
+          'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=70',
     ),
   ];
 
@@ -320,7 +320,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       brand: 'Toyota',
       capacity: 4,
       imageUrl:
-          'https://www.buyatoyota.com/sharpr/bat/assets/img/vehicle-info/Corolla/2026/hero-image.png',
+          'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=70',
       pricePerKm: 0.40,
       basePrice: 5.0,
       features: [
@@ -341,7 +341,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       brand: 'Toyota',
       capacity: 4,
       imageUrl:
-          'https://altamwean.com/wp-content/uploads/2025/09/تويوتا-كامري-هايبرد-2025-1.webp',
+          'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=70',
       pricePerKm: 0.50,
       basePrice: 7.0,
       features: [
@@ -363,7 +363,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       brand: 'Toyota',
       capacity: 7,
       imageUrl:
-          'https://ccarprice.com/products/Toyota_Fortuner_Leader_Edition_2024.jpg',
+          'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=70',
       pricePerKm: 0.70,
       basePrice: 10.0,
       features: [
@@ -385,7 +385,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       brand: 'Toyota',
       capacity: 7,
       imageUrl:
-          'https://imgd.aeplcdn.com/664x374/n/cw/ec/139739/land-cruiser-exterior-right-front-three-quarter-3.png?isig=0&q=80',
+          'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=70',
       pricePerKm: 0.75,
       basePrice: 12.0,
       features: [
@@ -408,7 +408,7 @@ class AirportTaxiRepositoryImpl implements AirportTaxiRepository {
       brand: 'BMW',
       capacity: 4,
       imageUrl:
-          'https://cdn.findyourbmw.ae/public/uploads/catalog/vehicles/thumb/image_png_41FJA_2025_C4A_KSJU_30.png',
+          'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=70',
       pricePerKm: 0.95,
       basePrice: 15.0,
       features: [
